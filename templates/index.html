@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+        <main>
+            <div class="content">
+                <section class="search-section">
+                    <input type="text" id="city-input" placeholder="E.g., New York, London, Tokyo">
+                    <button id="search-button">Search</button>
+                    <p>or</p>
+                    <button id="location-button">Use Current Location</button>
+                </section>
+                <section class="weather-section">
+                    <div class="current-weather" id="current-weather">
+                        <!-- Current weather data will be displayed here -->
+                    </div>
+			<h2>4-Day Forecast</h2>
+                    <div class="forecast" id="forecast">
+                    <!-- <h2>4-Day Forecast</h2> -->
+                        <!-- Forecast data will be displayed here -->
+                    </div>
+                </section>
+            </div>
+            <section class="subscribe-section">
+                <h2>Subscribe to Daily Weather Updates</h2>
+                <form id="subscribe-form">
+                    <input type="email" id="email-input" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

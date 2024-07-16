@@ -1,0 +1,125 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    background-color: #42a5f5;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.search-section, .subscribe-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-section {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-section input, .subscribe-section input {
+    padding: 10px;
+    width: 80%;
+    margin: 5px 0;
+}
+
+.search-section button, .subscribe-section button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-section button#location-button {
+    background-color: #757575;
+}
+
+.weather-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.current-weather, .forecast {
+    background-color: #bbdefb;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.current-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-weather .weather-details {
+    flex: 1;
+}
+
+.current-weather .weather-details p {
+    margin: 5px 0;
+}
+
+.weather-icon {
+    text-align: center;
+    flex: 0 0 400px; 
+}
+
+.weather-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast-day {
+    background-color: #eceff1;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 23%;
+}
+
+.forecast-day img {
+    width: 40px;
+    height: 40px;
+}

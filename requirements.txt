@@ -1,0 +1,5 @@
+Flask
+requests
+Flask-Mail
+beautifulsoup4
+Werkzeug
