@@ -109,6 +109,14 @@ main {
 .forecast {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.forecast-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .forecast-day {
@@ -116,10 +124,42 @@ main {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    width: 23%;
+    flex: 0 0 23%; 
+    box-sizing: border-box;
+    margin-bottom: 10px; 
 }
 
 .forecast-day img {
     width: 40px;
     height: 40px;
+}
+
+#city-history {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.city-history-item {
+/*    cursor: pointer;*/
+    color: #1976d2;
+/*    text-decoration: underline;*/
+}
+
+.search-section button#clear-history-button {
+    background-color: #d32f2f;
+}
+
+#load-more-btn {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#load-more-btn:hover {
+    background-color: #0b7dda;
 }
