@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from weather_api import get_weather_data, save_weather_data, get_cached_weather_data
+from weather_api import get_weather_data, save_weather_data, get_cached_weather_data,more_weather_data
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
@@ -12,12 +12,18 @@ app.config['MAIL_PASSWORD'] = 'your_password'
 
 mail = Mail(app)
 
+city = ''
+lat = ''
+lon = ''
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/weather', methods=['GET'])
 def weather():
+    global city, lat,lon
+    lat = lon = ''
     city = request.args.get('city')
     if city:
         # Check cache first
@@ -37,6 +43,8 @@ def weather():
 
 @app.route('/weatherlocation', methods=['GET'])
 def weatherlocation():
+    global city, lat,lon
+    city = ''
     lat = request.args.get('lat')
     lon = request.args.get('lon')
     if lat and lon:
@@ -49,6 +57,19 @@ def weatherlocation():
         data = get_weather_data(lat = lat, lon = lon)
         if data:
             save_weather_data(lat+lon, data)
+            return jsonify(data)
+        else:
+            return jsonify({'error': 'City not found'}), 404
+    else:
+        return jsonify({'error': 'No city provided'}), 400
+
+
+@app.route('/load_more_forecast', methods=['GET'])
+def more_forecast():
+    global city, lat,lon
+    if (lat !='' and lon != '') or city != '':
+        data = more_weather_data(city = city, lat = lat, lon = lon)
+        if data:
             return jsonify(data)
         else:
             return jsonify({'error': 'City not found'}), 404
