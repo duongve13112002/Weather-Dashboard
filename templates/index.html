@@ -18,6 +18,11 @@
                     <button id="search-button">Search</button>
                     <p>or</p>
                     <button id="location-button">Use Current Location</button>
+                    <div id="city-history">
+                        <strong>City History:</strong>
+                        <!-- City history will be displayed here -->
+                    </div>
+                    <button id="clear-history-button" style="display: none;" >Clear History</button>
                 </section>
                 <section class="weather-section">
                     <div class="current-weather" id="current-weather">
@@ -28,6 +33,7 @@
                     <!-- <h2>4-Day Forecast</h2> -->
                         <!-- Forecast data will be displayed here -->
                     </div>
+		    <button id="load-more-btn" onclick="loadMoreForecast()" style="display: none;">Load More</button>
                 </section>
             </div>
             <section class="subscribe-section">
